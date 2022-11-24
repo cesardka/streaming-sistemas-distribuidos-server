@@ -19,7 +19,6 @@ brew install ffmpeg
 
 ```ssh
 ffmpeg -i musica_a_ser_fracionada.mp3 -c:a libmp3lame -b:a 128k -map 0:0 -f segment -segment_time 5 -segment_list lista_de_fracoes.m3u8 -segment_format mpegts fracao%03d.ts
-
 ```
 
 Os arquivos HLS gerados irão ser usados pelo servidor para servirmos via HTTP! :)
