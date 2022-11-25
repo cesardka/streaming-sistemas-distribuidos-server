@@ -15,7 +15,6 @@ func headersParaCORS(h http.Handler) http.HandlerFunc {
 }
 
 func main() {
-	// TODO: permitir definir caminhos e porta alternativos via linha de comando
 	diretorio_de_arquivos := "files"
 	PORTA_PADRAO := 8080
 

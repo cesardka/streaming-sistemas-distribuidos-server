@@ -1,0 +1,15 @@
+version: "1"
+
+services:
+  streaming-sistemas-distribuidos:
+    image: "streaming-sistemas-distribuidos/streaming-sistemas-distribuidos:latest"
+    expose:
+      - "5000"
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - streaming-sistemas-distribuidos
+    ports:
+      - "4000:4000"

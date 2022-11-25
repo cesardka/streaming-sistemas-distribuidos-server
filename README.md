@@ -11,13 +11,13 @@ Esse projeto é uma prova de conceito para demonstrar um servidor de streaming p
 
 1. Instale o pacote ffmpeg para poder fracionar as mídias a serem disponibilizadas via streaming
 
-```ssh
+```sh
 brew install ffmpeg
 ```
 
 2. Fracione a mídia em questão usando o comando sugerido abaixo
 
-```ssh
+```sh
 ffmpeg -i musica_a_ser_fracionada.mp3 -c:a libmp3lame -b:a 128k -map 0:0 -f segment -segment_time 5 -segment_list lista_de_fracoes.m3u8 -segment_format mpegts fracao%03d.ts
 ```
 
@@ -37,4 +37,18 @@ brew install go
 
 ```sh
 go run main.go
+```
+
+## Subindo diversas instâncias
+
+1. Instale Docker e Docker-Compose
+
+```sh
+brew install docker docker-compose
+```
+
+2. Inicie o docker-compose com múltiplas instâncias
+
+```sh
+docker-compose up --scale streaming-sistemas-distribuidos=5
 ```
